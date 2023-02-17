@@ -1,17 +1,14 @@
-document.getElementById("countries-svg").addEventListener("load", () => {
-  const svg = document.getElementById("countries-svg").contentDocument;
-  const canada = svg.getElementById("CA");
+window.onload = () => {
+    let chosen_country = "";
 
-  canada.addEventListener("mouseover", () => {
-    canada.style.fill = "#4e4d4d";
-  });
+    setTimeout(() => {
+        chosen_country = prompt("Enter a country name: ");
 
-  canada.addEventListener("mouseleave", () => {
-    canada.style.fill = "black";
-  });
-
-  canada.addEventListener("mousedown", () => {
-    console.log("clicked");
-    canada.style.fill = canada.style.fill === "green" ? "black" : "green";
-  });
-});
+        if (chosen_country === "canada") {
+            const svg = document.getElementById("countries-svg").contentDocument;
+            const canada_svg = svg.getElementById("CA");
+    
+            canada_svg.style.fill = canada_svg.style.fill === "green" ? "black" : "green";
+        }
+    }, 2000);
+}
