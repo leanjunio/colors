@@ -7,7 +7,9 @@ window.onload = () => {
         if (chosen_country === "canada") {
             const svg = document.getElementById("countries-svg").contentDocument;
             const canada_svg = svg.getElementById("CA");
-    
+
+            document.getElementById('chosen').append(`${chosen_country}`)
+
             canada_svg.style.fill = canada_svg.style.fill === "green" ? "black" : "green";
         }
     }, 2000);
